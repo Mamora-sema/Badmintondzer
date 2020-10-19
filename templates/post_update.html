@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block litle %}
+Обновление статьи
+{% endblock %}
+{% block body %}
+<div class="container">
+   <h1>Обновление статьи</h1>
+    <form method="post">
+        <input type = "text" name = "title" id = "title"class = "form-control" value="{{article.title}}" placeholder="Введите название"><br>
+        <textarea name = "intro" id = "intro" class = "form-control" placeholder="Введите анонс">{{article.intro}}</textarea><br>
+        <textarea name = "text" id = "text" class = "form-control" placeholder="Введите основной текст">{{article.text}} </textarea><br>
+        <input type = submit class = "btn btn-success" value="Обновить">
+        </form>
+</div>
+
+{% endblock %}

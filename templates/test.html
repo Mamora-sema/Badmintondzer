@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block litle %}
+Главная страница
+{% endblock %}
+{% block body %}
+
+<div class="container">
+    <h1>Интересные новости</h1>
+
+    {% for us in user %}
+
+    <div class="alert alert-success">
+        <h2>{{ us.login}}</h2>
+        <p>{{ us.id}}</p>
+        <p><b> Дата: {{ us.password}}</b></p>
+        <a href="/user/{{ us.id }}/del" class ="btn btn-warning">Детальнее</a>
+    </div>
+
+    {% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block litle %}
+{{  news.title }}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>{{news.title}}</h1>
+    <div class="alert alert-success">
+        <p>{{ news.text }}</p>
+        <p><b> Дата: {{ news.date.date() }}</b></p>
+        <a href="/news/{{ news.id }}/del" class ="btn btn-danger">Удалить</a>
+        <a href="/news/{{ news.id }}/update" class ="btn btn-success">Редактировать</a>
+    </div>
+
+
+</div>
+
+{% endblock %}

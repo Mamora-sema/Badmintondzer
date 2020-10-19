@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block litle %}
+Обновление сообщения
+<style>
+        .descr { visibility: hidden; }
+    </style>
+{% endblock %}
+{% block body %}
+<div class="container">
+   <h1>Обновление сообщения</h1>
+    <form method="post">
+        <input type = "text" name = "Name" id = "Name"class = "form-control" value="{{message.Name}}" placeholder="Введите название"><br>
+        <textarea name = "Surname" id = "Surname" class = "form-control" placeholder="Введите анонс">{{message.Surname}}</textarea><br>
+        <textarea name = "text" id = "text" class = "form-control" placeholder="Введите основной текст">{{message.text}} </textarea><br>
+        <input type = submit class = "btn btn-success" value="Обновить">
+
+
+        </form>
+</div>
+
+{% endblock %}

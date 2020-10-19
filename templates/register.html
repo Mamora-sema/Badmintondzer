@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <style>
+        .descr { visibility: hidden; }
+    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>
+        Регистрация</title>
+</head>
+<body>
+<div class="container">
+    <div class="alert alert-primary">
+<h1>Страница регистрации</h1>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        {% block body %}{% endblock %}
+
+
+            <form method="post">
+                <input type = "text" name = "login" id = "login"class = "form-control" size="1" placeholder="Введите ваша имя"><br>
+                <input name = "surname" id = "surname" class = "form-control"placeholder="Введите вашу фамилию"></input><br>
+                <input type="password" name = "password" id = "password" class = "form-control"placeholder="Введите пароль"></input><br>
+                <input type="password" name = "password2" id = "password2" class = "form-control"placeholder="Введите пароль повторно"></input><br>
+                <input type = submit class = "btn btn-success" value="Регистрация">
+
+                <a class="btn btn-info" href="/login"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font>Уже есть аккаунт</font></a>
+             </form>
+
+    </div>
+     </div>
+</body>
+</html>

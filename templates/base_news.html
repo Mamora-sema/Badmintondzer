@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <style>
+        .descr { visibility: hidden; }
+    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>
+        {% block litle %}{% endblock %}</title>
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Бадминтон</font></font></h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+
+    <a class="p-2 text-dark" href="/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Главная страница</font></font></a>
+    <a class="p-2 text-dark" href="/posts"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Все посты</font></font></a>
+    <a class="p-2 text-dark" href="/message"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Сообщения</font></font></a>
+       <a class="p-2 text-dark" href="/timetable"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Расписание</font></font></a>
+   <a class="btn btn-warning" href="/news_selection"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Создать</font></font></a>
+
+  </nav>
+
+</div>
+
+</div>
+<div class="container">
+<div class="btn-group" role="group" aria-label="Basic example">
+  <a class="btn btn-secondary" href="/create-article">Информация для группы</font></font></a>
+      <a class="btn btn-secondary" href="/urgent_create">Бегущая строка</font></font></a>
+    <a class="btn btn-secondary" href="/create_news">Новости</font></font></a>
+
+    </div>
+{% block body%}{% endblock %}
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'base_news.html' %}
+{% block litle %}
+Подготовка новости
+{% endblock %}
+{% block body %}
+<div class="container">
+   <h1>Добавление новости</h1>
+    <form method="post">
+        <input type = "text" name = "title" id = "title"class = "form-control" placeholder="Введите название новости"><br>
+        <textarea name = "intro" id = "intro" class = "form-control"placeholder="Введите анонс новости"></textarea><br>
+        <textarea name = "text" id = "text" class = "form-control" placeholder="Введите основной текст новости"></textarea><br>
+        <input type = submit class = "btn btn-success" value="Отправить">
+        </form>
+</div>
+
+{% endblock %}

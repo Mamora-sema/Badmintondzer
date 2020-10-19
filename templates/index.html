@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block litle %}
+Главная страница
+{% endblock %}
+{% block body %}
+
+<div class="container">
+    <h1>Интересные новости</h1>
+    {% if news|length > 0%}
+    {% for new in news %}
+
+    <div class="alert alert-success">
+        <h2>{{ new.title}}</h2>
+        <p>{{ new.intro}}</p>
+        <p><b> Дата: {{ new.date.date() }}</b></p>
+        <a href="/news/{{ new.id }}" class ="btn btn-warning">Детальнее</a>
+    </div>
+
+    {% endfor %}
+    {% else %}
+    <p>У нас ещё нету новостей на сайте</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block litle %}
+Ваши сообщения
+{% endblock %}
+{% block body %}
+
+<div class="container">
+    {% for mes in  message %}
+    <div class="alert alert-light">
+        <p><font size="4" color="blue" >{{ mes.Name }} {{ mes.Surname}}</font><font size="0.5" color="grey" > {{ mes.date.time()}}</font> </p>
+        <p>{{ mes.text}} <a href="/message/{{ mes.id }}/del" class ="btn btn-danger">Удалить</a><a href="/message/{{ mes.id}}/update" class ="btn btn-success">Редактировать</a></p>
+</div>
+    {% endfor %}
+  <div class="alert alert-secondary">
+        <form method="post">
+
+        <input type = "text" name = "text" id = "text"class = "form-control" size="1" placeholder="Введите текст"><br>
+        <input type = submit class = "btn btn-success" value="Отправить">
+        </form>
+  </div>
+</div>
+{% endblock %}
