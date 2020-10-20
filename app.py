@@ -1,6 +1,5 @@
 import flask_login
 from flask import Flask, render_template, url_for, request, redirect, flash, current_app
-from flask_principal import Principal, RoleNeed, Permission, identity_changed, Identity, AnonymousIdentity
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
@@ -18,7 +17,7 @@ app.config['SQLALCHEMY_BINDS'] = {
 }
 db = SQLAlchemy(app)
 manager = LoginManager(app)
-principals = Principal(app)
+
 
 
 
